@@ -1,13 +1,14 @@
+import bryanPhoto from "./assets/bryan-leavy.jpg";
+import ronanPhoto from "./assets/ronan-maher.jpg";
 import { useState } from "react";
 import {
   ArrowRight,
   BarChart3,
-  Building2,
+  Eye,
   Check,
   GraduationCap,
   Hammer,
   Hotel,
-  Lightbulb,
   LineChart,
   Menu,
   Phone,
@@ -16,6 +17,8 @@ import {
   TrendingUp,
   UtensilsCrossed,
   X,
+  Compass,
+  MoveRight,
 } from "lucide-react";
 import "./App.css";
 
@@ -63,7 +66,7 @@ const approach = [
       "Understand the operation, the decisions being made, the friction slowing progress and the evidence already available.",
   },
   {
-    icon: Lightbulb,
+    icon: Compass,
     number: "02",
     title: "Clarify",
     description:
@@ -91,7 +94,7 @@ const plans = [
     label: "Clarity Foundation",
     description:
       "For organisations that need to understand their available data, uncover what is missing and identify the first improvement opportunity.",
-    price: "From €2,500",
+    price: "",
     cadence: "Project-based engagement",
     features: [
       "Data and process discovery review",
@@ -107,7 +110,7 @@ const plans = [
     label: "Continuous Improvement",
     description:
       "For organisations that want visibility plus a regular partner to translate performance signals into practical improvement.",
-    price: "From €750 per month",
+    price: "",
     cadence: "Monthly advisory partnership",
     featured: true,
     features: [
@@ -124,7 +127,7 @@ const plans = [
     label: "Embedded Excellence",
     description:
       "For organisations seeking an embedded analytics and operational-excellence capability without building a full internal function.",
-    price: "Custom engagement",
+    price: "",
     cadence: "Embedded advisory partnership",
     features: [
       "Everything in Continuous Improvement",
@@ -231,11 +234,29 @@ function App() {
     setMenuOpen(false);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    setFormSent(true);
-  }
+ async function handleSubmit(event) {
+  event.preventDefault();
 
+  const formData = new FormData(event.target);
+
+  const response = await fetch(
+    "https://formspree.io/f/myeyjjnv",
+    {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    }
+  );
+
+  if (response.ok) {
+    setFormSent(true);
+    event.target.reset();
+  } else {
+    alert("Sorry, something went wrong. Please try again.");
+  }
+}
   return (
     <div className="website">
       <header className="site-header">
@@ -354,43 +375,80 @@ function App() {
           </div>
 
           <div className="clarity-grid">
-            <article className="clarity-card">
-              <span className="card-number">01</span>
-              <div className="clarity-icon">
-                <Building2 size={25} />
-              </div>
-              <h3>Visibility</h3>
-              <p>
-                Reveal what is happening across the operation and establish
-                one dependable view of performance.
-              </p>
-            </article>
 
-            <article className="clarity-card clarity-card-highlight">
-              <span className="card-number">02</span>
-              <div className="clarity-icon">
-                <Lightbulb size={25} />
-              </div>
-              <h3>Clarity</h3>
-              <p>
-                Understand why outcomes are changing and focus attention on
-                the losses and opportunities that matter.
-              </p>
-            </article>
+  <article className="clarity-card">
+    <span className="card-number">01</span>
+    <div className="clarity-icon">
+      <Eye size={65} />
+    </div>
 
-            <article className="clarity-card">
-              <span className="card-number">03</span>
-              <div className="clarity-icon">
-                <TrendingUp size={25} />
-              </div>
-              <h3>Momentum</h3>
-              <p>
-                Convert insight into focused improvement work and measurable
-                organisational progress.
-              </p>
-            </article>
-          </div>
-        </section>
+    <h3>Visibility</h3>
+
+    <p>
+      Reveal what is happening across the operation and establish one dependable
+      view of performance.
+    </p>
+  </article>
+
+  <article className="clarity-card clarity-card-highlight">
+    <span className="card-number">02</span>
+    <div className="clarity-icon">
+      <Compass size={65} />
+    </div>
+
+    <h3>Clarity</h3>
+
+    <p>
+      Understand why outcomes are changing and focus attention on the losses and
+      opportunities that matter.
+    </p>
+  </article>
+
+  <article className="clarity-card">
+    <span className="card-number">03</span>
+    <div className="clarity-icon">
+      <Search size={65} />
+    </div>
+
+    <h3>Insight</h3>
+
+    <p>
+      Connect data, people and processes to uncover patterns, opportunities and
+      hidden constraints.
+    </p>
+  </article>
+
+  <article className="clarity-card clarity-card-highlight">
+    <span className="card-number">04</span>
+    <div className="clarity-icon">
+      <TrendingUp size={65} />
+    </div>
+
+    <h3>Improvement</h3>
+
+    <p>
+      Translate insight into focused action, continuous improvement and
+      measurable operational gains.
+    </p>
+  </article>
+
+  <article className="clarity-card">
+    <span className="card-number">05</span>
+    <div className="clarity-icon">
+      <MoveRight size={65} />
+    </div>
+
+    <h3>Momentum</h3>
+
+    <p>
+      Build sustainable progress, stronger decision making and long-term
+      organisational capability.
+    </p>
+  </article>
+
+</div>
+
+  </section>
 
         <section className="dark-section" id="sectors">
           <div className="section-container">
@@ -461,7 +519,7 @@ function App() {
           <div className="section-container">
             <div className="pricing-heading">
               <p className="section-kicker">Ways to work together</p>
-              <h2>Choose the partnership your ambition needs.</h2>
+              <h2>Choose the level of partnership that's right for your organisation..</h2>
               <p>
                 Each engagement is scoped around data readiness, complexity,
                 organisational size and business priorities.
@@ -515,42 +573,44 @@ function App() {
         </section>
 
         <section className="founder-section" id="about">
-          <div className="section-container founder-layout">
-            <div className="founder-card">
-              <div className="founder-decoration" aria-hidden="true" />
-              <p>Founder</p>
-              <h2>
-                Bryan
-                <br />
-                Leavy
-              </h2>
-              <span>Analytics • LEAN culture • Operational excellence</span>
-            </div>
+          <div className="section-container">
+            <p className="section-kicker">Meet the founders</p>
 
-            <div className="founder-copy">
-              <p className="section-kicker section-kicker-dark">
-                Built from operational experience
-              </p>
+            <h2>
+              Built on operational experience, analytics and continuous
+              improvement.
+            </h2>
 
-              <h2>Practical insight, grounded in the real world of work.</h2>
+            <div className="founder-grid">
+              <div className="founder-profile">
+                <div className="founder-image-frame">
+                  <img
+                    src={bryanPhoto}
+                    alt="Bryan Leavy"
+                    className="founder-photo"
+                  />
+                  <h3>Bryan Leavy</h3>
+                  <p className="founder-role">Co-Founder</p>
+                  <a href="/bryan-leavy" className="founder-link">
+                    Explore Bryan's Journey →
+                  </a>
+                </div>
+              </div>
 
-              <p>
-                My experience began on the warehouse floor before progressing
-                into junior project management and then senior project
-                management within a globally renowned pharmaceutical company.
-              </p>
-
-              <p>
-                That journey taught me that sustainable improvement does not
-                begin with a chart. It begins by understanding the work, the
-                people doing it and the barriers keeping good organisations
-                from performing at their best.
-              </p>
-
-              <strong>
-                Bow & Arrow Analytics exists to help organisations thrive
-                rather than simply survive.
-              </strong>
+              <div className="founder-profile">
+                <div className="founder-image-frame">
+                  <img
+                    src={ronanPhoto}
+                    alt="Ronan Maher"
+                    className="founder-photo"
+                  />
+                  <h3>Ronan Maher</h3>
+                  <p className="founder-role">Co-Founder</p>
+                 <a href="/ronan-maher" className="founder-link">
+                    Explore Ronan's Journey →
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -615,8 +675,7 @@ function App() {
                   </span>
                   <h3>Your enquiry is ready.</h3>
                   <p>
-                    This prototype form is not connected to email yet. The live
-                    form will require a form service or backend.
+                    Your enquiry has been received successfully. We'll review your challenge and be in touch shortly.
                   </p>
                   <button type="button" onClick={() => setFormSent(false)}>
                     Return to form
@@ -627,35 +686,50 @@ function App() {
                   <div className="form-row">
                     <label>
                       Name
-                      <input type="text" required />
-                    </label>
+                      <input
+  type="text"
+  name="ContactName"
+  placeholder="Your name"
+  required
+/>
 
-                    <label>
-                      Organisation
-                      <input type="text" />
-                    </label>
+<input
+  type="text"
+  name="Organisation"
+  placeholder="Organisation name"
+/>
+
+<input
+  type="email"
+  name="Email"
+  placeholder="Your email"
+  required
+/>
+
+<select
+  name="Sector"
+  defaultValue=""
+>
+  <option value="" disabled>
+    Select your sector
+  </option>
+
+  <option>Hotels & Hospitality</option>
+  <option>Food & Beverage</option>
+  <option>Education</option>
+  <option>Construction & Landscaping</option>
+  <option>Other</option>
+</select>
+
+<textarea
+  name="Challenge"
+  rows="5"
+  placeholder="What challenge, frustration, inefficiency or lack of visibility are you trying to solve?"
+  required
+/>
+
+                  </label>
                   </div>
-
-                  <label>
-                    Work email
-                    <input type="email" required />
-                  </label>
-
-                  <label>
-                    Sector
-                    <select defaultValue="Hotels & Hospitality">
-                      <option>Hotels & Hospitality</option>
-                      <option>Food & Beverage</option>
-                      <option>Education</option>
-                      <option>Construction & Landscaping</option>
-                      <option>Other</option>
-                    </select>
-                  </label>
-
-                  <label>
-                    Where does ambiguity exist today?
-                    <textarea rows="5" required />
-                  </label>
 
                   <button className="form-submit" type="submit">
                     Start the conversation
