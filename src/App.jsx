@@ -226,12 +226,261 @@ function DashboardPreview() {
   );
 }
 
+function BryanStory() {
+  return (
+    <div className="website founder-story-page">
+      <header className="site-header">
+        <div className="nav-container">
+          <a href="/" className="brand-link" aria-label="Bow & Arrow Analytics home">
+            <span className="brand-mark">
+              <Target size={70} />
+            </span>
+
+            <span className="brand-text">
+              <strong>Bow & Arrow</strong>
+              <small>Analytics</small>
+            </span>
+          </a>
+
+          <a href="/#contact" className="nav-cta">
+            Start a conversation
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section className="founder-story-hero">
+          <div className="founder-story-container">
+            <div className="founder-story-copy">
+              <a href="/" className="back-link">
+                <ArrowRight size={17} />
+                Back to Bow & Arrow Analytics
+              </a>
+              <p className="section-kicker">Bryan Leavy · Co-Founder</p>
+              <h1>From the construction site to operational excellence.</h1>
+              <p className="founder-story-lead">
+                Turning practical experience into lasting improvement.
+              </p>
+            </div>
+
+            <div className="founder-story-image-wrap">
+              <img
+                src={bryanPhoto}
+                alt="Bryan Leavy"
+                className="founder-story-image"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="founder-story-content">
+          <div className="founder-story-container founder-story-body">
+            <p>
+              I didn't start my career in a boardroom. I started it on
+              construction sites.
+            </p>
+
+            <p>
+              Working hands-on in construction taught me the importance of
+              strong foundations, attention to detail, and the value of seeing
+              a job through from start to finish. Long before I entered the
+              world of analytics, continuous improvement, and project
+              management, I was learning first-hand how people, processes, and
+              planning combine to deliver results.
+            </p>
+
+            <p>
+              I later joined a global organisation as a Warehouse Operator,
+              gaining a front-row seat to the complexity of large-scale
+              operations and supply chains. While working on the shop floor, I
+              became fascinated by how processes could be improved, how waste
+              could be reduced, and how teams could be supported to work more
+              effectively.
+            </p>
+
+            <p>That curiosity led me into project management and operational excellence.</p>
+
+            <p>
+              As my responsibilities grew, so did the scale of the challenges I
+              was trusted to solve. Through successive promotions, I progressed
+              from frontline operations into Operational Excellence leadership,
+              leading transformation initiatives focused on LEAN operational
+              processes, supply chain improvement, and organisational
+              efficiency.
+            </p>
+
+            <p>
+              Throughout my career, I have managed multi-million euro projects,
+              worked with stakeholders across multiple countries, and led
+              programmes that delivered measurable improvements in performance,
+              productivity, and process effectiveness. Along the way, I earned
+              my LEAN Black Belt certification and Six Sigma Green Belt
+              certification, strengthening my ability to combine structured
+              methodologies with practical, real-world experience.
+            </p>
+
+            <p>But one lesson has stood out above all others.</p>
+
+            <p>
+              The biggest opportunities for improvement are rarely hidden in the
+              data alone. They're found where people, processes, and information
+              intersect. The most successful transformations happen when
+              organisations create visibility, build clarity, and bring people
+              with them on the journey.
+            </p>
+
+            <p>Those principles became the foundation of Bow & Arrow Analytics.</p>
+
+            <p>
+              Starting this business has been a long-held ambition of mine.
+              While I've been fortunate to work on transformative initiatives
+              within large global organisations, I wanted the opportunity to
+              help a wider range of businesses unlock the same benefits. Many
+              organisations know they can perform better, but they struggle to
+              identify where the real opportunities exist.
+            </p>
+
+            <p>That's where I help.</p>
+
+            <p>
+              Through data analytics, process improvement, operational
+              excellence, and practical change management, I help organisations
+              uncover what's holding them back and focus on what moves them
+              forward.
+            </p>
+
+            <p>
+              My approach is simple: understand the reality of the business,
+              work alongside the people closest to the process, and deliver
+              solutions that create lasting value.
+            </p>
+
+            <blockquote>
+              Sustainable improvement isn't about complicated frameworks or
+              impressive dashboards. It's about giving people the visibility,
+              clarity, and confidence to make better decisions every day.
+            </blockquote>
+          </div>
+        </section>
+      </main>
+
+      <footer className="site-footer">
+        <div className="footer-bottom">
+          © 2026 Bow & Arrow Analytics. Illustrative dashboard metrics are not
+          client results.
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+function RonanStory() {
+  return (
+    <div className="website founder-story-page">
+      <header className="site-header">
+        <div className="nav-container">
+          <a href="/" className="brand-link" aria-label="Bow & Arrow Analytics home">
+            <span className="brand-mark">
+              <Target size={70} />
+            </span>
+
+            <span className="brand-text">
+              <strong>Bow & Arrow</strong>
+              <small>Analytics</small>
+            </span>
+          </a>
+
+          <a href="/#contact" className="nav-cta">
+            Start a conversation
+          </a>
+        </div>
+      </header>
+
+      <main>
+        <section className="founder-story-hero">
+          <div className="founder-story-container">
+            <div className="founder-story-copy">
+              <a href="/" className="back-link">
+                <ArrowRight size={17} />
+                Back to Bow & Arrow Analytics
+              </a>
+              <p className="section-kicker">Ronan Maher · Co-Founder</p>
+              <h1>Built from the shop floor.</h1>
+              <p className="founder-story-lead">
+                Turning operational experience into meaningful change.
+              </p>
+            </div>
+
+            <div className="founder-story-image-wrap">
+              <img
+                src={ronanPhoto}
+                alt="Ronan Maher"
+                className="founder-story-image"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="founder-story-content">
+          <div className="founder-story-container founder-story-body">
+            <p>
+              My background spans construction, pharmaceutical manufacturing,
+              safety leadership, and continuous improvement. That journey has
+              given me a unique perspective on business performance: the best
+              improvements are discovered where the work happens.
+            </p>
+
+            <p>
+              From operating heavy machinery on construction projects to
+              managing production activities within a GMP-regulated
+              pharmaceutical environment, I developed a practical
+              understanding of operations, quality, safety, and delivery.
+            </p>
+
+            <p>
+              Those experiences taught me that sustainable improvement is not
+              achieved through reports alone. It comes from engaging with
+              people, understanding process constraints, and identifying the
+              root causes that prevent organisations from performing at their
+              best.
+            </p>
+
+            <p>
+              As a Continuous Improvement Specialist, I partner with teams
+              across multiple functions to simplify processes, reduce
+              inefficiencies, strengthen compliance, and deliver measurable
+              results while maintaining the highest standards of safety and
+              product quality.
+            </p>
+
+            <blockquote>
+              Great organisations thrive when operational experience and
+              data-driven decision making work together.
+            </blockquote>
+          </div>
+        </section>
+      </main>
+
+      <footer className="site-footer">
+        <div className="footer-bottom">
+          © 2026 Bow & Arrow Analytics. Illustrative dashboard metrics are not
+          client results.
+        </div>
+      </footer>
+    </div>
+  );
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [formSent, setFormSent] = useState(false);
 
-  function closeMenu() {
-    setMenuOpen(false);
+  if (window.location.pathname === "/ronan-maher") {
+    return <RonanStory />;
+  }
+
+  if (window.location.pathname === "/bryan-leavy") {
+    return <BryanStory />;
   }
 
  async function handleSubmit(event) {
@@ -263,7 +512,9 @@ function App() {
         <div className="nav-container">
           <a href="#top" className="brand-link" aria-label="Bow & Arrow Analytics home">
             <span className="brand-mark">
-              <Target size={22} />
+              <Target size={70
+
+              } />
             </span>
 
             <span className="brand-text">
@@ -276,7 +527,7 @@ function App() {
             <a href="#why">Why us</a>
             <a href="#sectors">Sectors</a>
             <a href="#approach">Approach</a>
-            <a href="#pricing">Pricing</a>
+            <a href="#pricing">Partnerships</a>
             <a href="#about">About</a>
             <a href="#insights">Insights</a>
           </nav>
@@ -300,7 +551,7 @@ function App() {
             <a href="#why">Why us</a>
             <a href="#sectors">Sectors</a>
             <a href="#approach">Approach</a>
-            <a href="#pricing">Pricing</a>
+            <a href="#pricing">Partnerships</a>
             <a href="#about">About</a>
             <a href="#insights">Insights</a>
             <a href="#contact">Start a conversation</a>
@@ -341,7 +592,7 @@ function App() {
               </div>
 
               <p className="international-note">
-                Based in Ireland. Partnering with organisations anywhere.
+                Based in Ireland. Partnering with organisations globally.
               </p>
             </div>
 
@@ -352,8 +603,10 @@ function App() {
             <span>Visibility</span>
             <span>Clarity</span>
             <span>Insight</span>
-            <span>Improvement</span>
-            <span>Momentum</span>
+            <span className="hero-strip-pair">
+              <span>Improvement</span>
+              <span>Momentum</span>
+            </span>
           </div>
         </section>
 
@@ -519,7 +772,7 @@ function App() {
           <div className="section-container">
             <div className="pricing-heading">
               <p className="section-kicker">Ways to work together</p>
-              <h2>Choose the level of partnership that's right for your organisation..</h2>
+              <h2>Choose the right level of partnership for your organisation.</h2>
               <p>
                 Each engagement is scoped around data readiness, complexity,
                 organisational size and business priorities.
@@ -684,51 +937,62 @@ function App() {
               ) : (
                 <form onSubmit={handleSubmit}>
                   <div className="form-row">
-                    <label>
+                    <label htmlFor="contact-name">
                       Name
                       <input
-  type="text"
-  name="ContactName"
-  placeholder="Your name"
-  required
-/>
+                        id="contact-name"
+                        type="text"
+                        name="ContactName"
+                        placeholder="Your name"
+                        required
+                      />
+                    </label>
 
-<input
-  type="text"
-  name="Organisation"
-  placeholder="Organisation name"
-/>
+                    <label htmlFor="organisation">
+                      Organisation
+                      <input
+                        id="organisation"
+                        type="text"
+                        name="Organisation"
+                        placeholder="Organisation name"
+                      />
+                    </label>
 
-<input
-  type="email"
-  name="Email"
-  placeholder="Your email"
-  required
-/>
+                    <label htmlFor="email">
+                      Email
+                      <input
+                        id="email"
+                        type="email"
+                        name="Email"
+                        placeholder="Your email"
+                        required
+                      />
+                    </label>
 
-<select
-  name="Sector"
-  defaultValue=""
->
-  <option value="" disabled>
-    Select your sector
-  </option>
+                    <label htmlFor="sector">
+                      Sector
+                      <select name="Sector" id="sector" defaultValue="">
+                        <option value="" disabled>
+                          Select your sector
+                        </option>
+                        <option>Hotels & Hospitality</option>
+                        <option>Food & Beverage</option>
+                        <option>Education</option>
+                        <option>Construction & Landscaping</option>
+                        <option>Other</option>
+                      </select>
+                    </label>
 
-  <option>Hotels & Hospitality</option>
-  <option>Food & Beverage</option>
-  <option>Education</option>
-  <option>Construction & Landscaping</option>
-  <option>Other</option>
-</select>
-
-<textarea
-  name="Challenge"
-  rows="5"
-  placeholder="What challenge, frustration, inefficiency or lack of visibility are you trying to solve?"
-  required
-/>
-
-                  </label>
+                    <label htmlFor="challenge">
+                      Challenge
+                      <textarea
+                        id="challenge"
+                        name="Challenge"
+                        rows="5"
+                        placeholder="What challenge, frustration, inefficiency or lack of visibility are you trying to solve?"
+                        required
+                      />
+                    </label>
                   </div>
 
                   <button className="form-submit" type="submit">
@@ -757,7 +1021,7 @@ function App() {
             <a href="#why">Why us</a>
             <a href="#sectors">Sectors</a>
             <a href="#approach">Approach</a>
-            <a href="#pricing">Pricing</a>
+            <a href="#pricing">Partnerships</a>
           </div>
 
           <div className="footer-contact">
