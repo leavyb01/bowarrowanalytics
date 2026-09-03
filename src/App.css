@@ -478,31 +478,33 @@ svg {
   z-index: 3;
   padding: 15px 20px;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: clamp(24px, 5vw, 74px);
+  gap: 0;
   background: var(--lime);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 2.2px;
   text-transform: uppercase;
+  line-height: 1;
 }
 
 .hero-strip-pair {
   display: inline-flex;
   align-items: center;
-  gap: clamp(16px, 3vw, 42px);
+  gap: 0;
   white-space: nowrap;
 }
 
 .hero-strip > span:not(:last-child)::after {
   content: "•";
-  margin-left: clamp(14px, 2.5vw, 34px);
+  margin: 0 clamp(14px, 2.5vw, 34px);
   color: var(--green-muted);
 }
 
 .hero-strip-pair span + span::before {
   content: "•";
-  margin-right: clamp(14px, 2.5vw, 34px);
+  margin: 0 clamp(14px, 2.5vw, 34px);
   color: var(--green-muted);
 }
 
@@ -1537,6 +1539,10 @@ svg {
     display: none;
   }
 
+  .hero-ring {
+    display: none;
+  }
+
   .section-heading {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -1616,21 +1622,25 @@ svg {
     overflow: hidden;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px 16px;
+    gap: 8px 0;
     font-size: 10px;
     letter-spacing: 1.4px;
   }
 
   .hero-strip-pair {
-    gap: 8px;
+    gap: 0;
   }
 
   .hero-strip > span:not(:last-child)::after {
-    margin-left: 8px;
+    margin: 0 8px;
   }
 
   .hero-strip-pair span + span::before {
-    margin-right: 8px;
+    margin: 0 8px;
+  }
+
+  .hero-strip > span:nth-child(3)::after {
+    display: none;
   }
 
   .dashboard-window {
@@ -2014,6 +2024,29 @@ svg {
 }
 
 @media (min-width: 700px) and (max-width: 1050px) {
+  .hero-strip {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    column-gap: 0;
+    row-gap: 8px;
+  }
+
+  .hero-strip > span:nth-child(3)::after {
+    display: none;
+  }
+
+  .hero-strip-pair {
+    grid-column: 1 / -1;
+    width: auto;
+    flex: none;
+    justify-content: center;
+  }
+
+  .hero-strip-pair::before {
+    display: none;
+  }
+
   .section-heading {
     gap: 16px;
   }
@@ -2034,6 +2067,30 @@ svg {
 
   .brand-link {
     gap: 14px;
+  }
+}
+
+@media (min-width: 1051px) and (max-width: 1366px) {
+  .hero-strip {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    column-gap: 0;
+    row-gap: 8px;
+  }
+
+  .hero-strip > span:nth-child(3)::after {
+    display: none;
+  }
+
+  .hero-strip-pair {
+    grid-column: 1 / -1;
+    width: auto;
+    justify-content: center;
+  }
+
+  .hero-strip-pair::before {
+    display: none;
   }
 }
 
