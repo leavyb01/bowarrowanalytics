@@ -489,8 +489,21 @@ svg {
 
 .hero-strip-pair {
   display: inline-flex;
-  gap: inherit;
+  align-items: center;
+  gap: clamp(16px, 3vw, 42px);
   white-space: nowrap;
+}
+
+.hero-strip > span:not(:last-child)::after {
+  content: "•";
+  margin-left: clamp(14px, 2.5vw, 34px);
+  color: var(--green-muted);
+}
+
+.hero-strip-pair span + span::before {
+  content: "•";
+  margin-right: clamp(14px, 2.5vw, 34px);
+  color: var(--green-muted);
 }
 
 .content-section,
@@ -1609,7 +1622,15 @@ svg {
   }
 
   .hero-strip-pair {
-    gap: 16px;
+    gap: 8px;
+  }
+
+  .hero-strip > span:not(:last-child)::after {
+    margin-left: 8px;
+  }
+
+  .hero-strip-pair span + span::before {
+    margin-right: 8px;
   }
 
   .dashboard-window {
