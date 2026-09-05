@@ -10,6 +10,7 @@ import {
   Hammer,
   Hotel,
   LineChart,
+  Mail,
   Menu,
   Phone,
   Search,
@@ -112,7 +113,6 @@ const plans = [
       "For organisations that want visibility plus a regular partner to translate performance signals into practical improvement.",
     price: "",
     cadence: "Monthly advisory partnership",
-    featured: true,
     features: [
       "Everything in Clarity Foundation",
       "Broader management insight solution",
@@ -782,15 +782,9 @@ function App() {
             <div className="pricing-grid">
               {plans.map((plan) => (
                 <article
-                  className={`pricing-card ${
-                    plan.featured ? "pricing-card-featured" : ""
-                  }`}
+                  className="pricing-card"
                   key={plan.name}
                 >
-                  {plan.featured && (
-                    <span className="recommended-label">Recommended</span>
-                  )}
-
                   <span className={`plan-marker plan-${plan.name.toLowerCase()}`} />
 
                   <p className="plan-label">{plan.label}</p>
@@ -918,6 +912,16 @@ function App() {
                 </span>
                 +353 87 185 4333
               </a>
+
+              <a
+                href="mailto:info@bowarrowanalytics.ie"
+                className="contact-email-link"
+              >
+                <span>
+                  <Mail size={20} />
+                </span>
+                info@bowarrowanalytics.ie
+              </a>
             </div>
 
             <div className="contact-card">
@@ -1025,8 +1029,11 @@ function App() {
           </div>
 
           <div className="footer-contact">
-            <strong>Talk to Bryan</strong>
+            <strong>Get in touch</strong>
             <a href="tel:+353871854333">+353 87 185 4333</a>
+            <a href="mailto:info@bowarrowanalytics.ie">
+              info@bowarrowanalytics.ie
+            </a>
             <p>Newbridge, Ireland</p>
             <p>Working internationally</p>
           </div>
