@@ -1,9 +1,15 @@
 import bryanPhoto from "./assets/bryan-leavy.jpg";
 import ronanPhoto from "./assets/ronan-maher.jpg";
-import { useState } from "react";
+import executiveOverview from "./assets/executive-overview.png";
+import salesPipeline from "./assets/sales-pipeline.png";
+import productsMargins from "./assets/products-margins.png";
+import installationProjects from "./assets/installation-projects.png";
+import operationalExcellence from "./assets/operational-excellence.png";
+import improvementOpportunities from "./assets/improvement-opportunities.png";
+import customerInsights from "./assets/customer-insight.png";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
-  BarChart3,
   Eye,
   Check,
   GraduationCap,
@@ -162,66 +168,57 @@ const articles = [
 ];
 
 function DashboardPreview() {
-  const bars = [40, 56, 48, 67, 62, 78, 72, 89, 83, 96];
+  const powerBiDemoUrl =
+    "https://app.powerbi.com/view?r=eyJrIjoiYmRkMmVlMWYtN2JhOS00MTE0LTgxNTktMmFiYTIyNWRlZTUxIiwidCI6IjliZGExN2U1LTI3MzctNDIyYi05YTA0LTZjNzA1ZDljYzNmYSJ9";
+
+  const dashboardPages = [
+    { name: "Executive Overview", image: executiveOverview },
+    { name: "Sales Pipeline", image: salesPipeline },
+    { name: "Products & Margins", image: productsMargins },
+    { name: "Installation & Projects", image: installationProjects },
+    { name: "Customer Insights", image: customerInsights },
+    { name: "Operational Excellence", image: operationalExcellence },
+    { name: "Improvement Opportunities", image: improvementOpportunities },
+  ];
+
+  const [activePageIndex, setActivePageIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActivePageIndex((current) => (current + 1) % dashboardPages.length);
+    }, 10000);
+
+    return () => window.clearInterval(intervalId);
+  }, []);
+
+  const activePage = dashboardPages[activePageIndex];
 
   return (
     <div className="dashboard-shell">
-      <div className="dashboard-window">
-        <div className="dashboard-header">
-          <div>
-            <span className="dashboard-label">Commercial visibility</span>
-            <h2>Hotel performance</h2>
-          </div>
-
-          <div className="dashboard-icon">
-            <BarChart3 size={23} />
-          </div>
-        </div>
-
-        <div className="metric-grid">
-          <div className="metric-card">
-            <span>Occupancy</span>
-            <strong>82.4%</strong>
-            <small>▲ 4.1%</small>
-          </div>
-
-          <div className="metric-card">
-            <span>ADR</span>
-            <strong>€164</strong>
-            <small>▲ 7.2%</small>
-          </div>
-
-          <div className="metric-card">
-            <span>RevPAR</span>
-            <strong>€135</strong>
-            <small>▲ 11.6%</small>
-          </div>
-        </div>
-
-        <div className="chart-panel">
-          <div className="chart-heading">
-            <span>Room revenue</span>
-            <span>Illustrative data</span>
-          </div>
-
-          <div className="bar-chart">
-            {bars.map((height, index) => (
-              <div
-                className="bar-column"
-                key={index}
-                style={{ height: `${height}%` }}
-              />
-            ))}
-          </div>
-
-          <div className="chart-axis">
-            <span>Jan</span>
-            <span>Dec</span>
-          </div>
+      <div className="dashboard-page-bubble">{activePage.name}</div>
+      <div className="dashboard-window dashboard-window-embed">
+        <div className="powerbi-embed-wrap">
+          <img
+            key={activePage.name}
+            src={activePage.image}
+            alt={activePage.name}
+            className="powerbi-embed"
+          />
         </div>
       </div>
 
-      <div className="dashboard-badge">Built for action</div>
+      <div className="dashboard-badge-wrap">
+        <div className="dashboard-badge">Built for action</div>
+        <a
+          className="dashboard-demo-link"
+          href={powerBiDemoUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          View Executive Overview demo
+          <ArrowRight size={15} />
+        </a>
+      </div>
     </div>
   );
 }
