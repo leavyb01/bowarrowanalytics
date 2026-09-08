@@ -199,10 +199,10 @@ function DashboardPreview() {
       <div className="dashboard-window dashboard-window-embed">
         <div className="powerbi-embed-wrap">
           <img
-            key={activePage.name}
             src={activePage.image}
             alt={activePage.name}
             className="powerbi-embed"
+            loading="eager"
           />
         </div>
       </div>
