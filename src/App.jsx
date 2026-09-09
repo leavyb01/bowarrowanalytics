@@ -5,11 +5,12 @@ import salesPipeline from "./assets/sales-pipeline.png";
 import productsMargins from "./assets/products-margins.png";
 import installationProjects from "./assets/installation-projects.png";
 import operationalExcellence from "./assets/operational-excellence.png";
-import improvementOpportunities from "./assets/improvement-opportunities.png";
-import customerInsights from "./assets/customer-insight.png";
+import improvementOpportunities from "./assets/improvement-opportunity.png";
+import customerInsights from "./assets/customer-insights.png";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
+  Briefcase,
   Eye,
   Check,
   GraduationCap,
@@ -33,34 +34,34 @@ const sectors = [
   {
     icon: Hotel,
     number: "01",
-    title: "Hotels & Hospitality",
+    title: "F & B, Hotels & Hospitality",
     description:
-      "Create one clear view of commercial, guest and operational performance, from occupancy and RevPAR to labour and service quality.",
-    examples: "Booking pace • Guest satisfaction • Labour efficiency",
+      "Create one clear view of commercial performance, guest experience, labour productivity and service quality across the operation.",
+    examples: "RevPAR • Guest experience • Labour efficiency",
   },
   {
-    icon: UtensilsCrossed,
+    icon: Briefcase,
     number: "02",
-    title: "Food & Beverage",
+    title: "Estate Agency, Solicitors & Other Professional Services",
     description:
-      "See where margin is won or lost by connecting sales, menu mix, waste, labour, purchasing and customer demand.",
-    examples: "Menu engineering • Waste • Cost of sales",
+      "Bring sales, delivery, utilisation and client performance into a single decision-making view so teams can act with confidence.",
+    examples: "Pipeline • Utilisation • Delivery insight",
   },
   {
     icon: GraduationCap,
     number: "03",
     title: "Education",
     description:
-      "Bring student performance, attendance and intervention data together so educators can identify trends and act earlier.",
-    examples: "Attendance • Attainment • Intervention impact",
+      "Give teachers and school leaders a clearer view of attendance, wellbeing, intervention planning and workload pressure so they can act early and stay ahead of emerging issues.",
+    examples: "Attendance • Intervention planning • Staff workload",
   },
   {
     icon: Hammer,
     number: "04",
-    title: "Construction & Landscaping",
+    title: "Construction, Landscaping, Trades & Design",
     description:
-      "Improve invoice flow and apply LEAN thinking to materials, labour, project progress, rework and operational handoffs.",
-    examples: "Invoice cycle • Materials • Labour utilisation",
+      "Improve visibility across projects, materials, labour, subcontractors and margin by connecting operational data with real-time decision-making.",
+    examples: "Project performance • Cost control • Labour productivity",
   },
 ];
 
@@ -186,7 +187,7 @@ function DashboardPreview() {
   useEffect(() => {
     const intervalId = window.setInterval(() => {
       setActivePageIndex((current) => (current + 1) % dashboardPages.length);
-    }, 10000);
+    }, 7000);
 
     return () => window.clearInterval(intervalId);
   }, []);
@@ -731,6 +732,7 @@ function App() {
                 );
               })}
             </div>
+
           </div>
         </section>
 
@@ -976,10 +978,11 @@ function App() {
                         <option value="" disabled>
                           Select your sector
                         </option>
-                        <option>Hotels & Hospitality</option>
-                        <option>Food & Beverage</option>
+                        <option>F & B, Hotels & Hospitality</option>
+                        <option>Estate Agency, Solicitors & Other Professional Services</option>
                         <option>Education</option>
-                        <option>Construction & Landscaping</option>
+                        <option>Construction, Landscaping, Trades & Design</option>
+                        <option>Motor Vehicle Garages</option>
                         <option>Other</option>
                       </select>
                     </label>
@@ -1027,7 +1030,8 @@ function App() {
 
           <div className="footer-contact">
             <strong>Get in touch</strong>
-            <a href="tel:+353871854333">+353 87 185 4333</a>
+            <a href="tel:+353871854333">Bryan: +353 87 185 4333</a>
+            <a href="tel:+353852287836">Ronan: +353 85 228 7836</a>
             <a href="mailto:info@bowarrowanalytics.ie">
               info@bowarrowanalytics.ie
             </a>
