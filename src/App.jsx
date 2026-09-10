@@ -483,10 +483,12 @@ function App() {
       const hashRoute = window.location.hash.replace(/^#\/?/, "").split("/")[0];
       const nextRoute = hashRoute || window.location.pathname.replace(/^\//, "") || "";
       setCurrentRoute(nextRoute);
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     };
 
     window.addEventListener("hashchange", handleRouteChange);
     window.addEventListener("popstate", handleRouteChange);
+    handleRouteChange();
 
     return () => {
       window.removeEventListener("hashchange", handleRouteChange);
@@ -858,7 +860,15 @@ function App() {
                   />
                   <h3>Bryan Leavy</h3>
                   <p className="founder-role">Co-Founder</p>
-                  <a href="#/bryan-leavy" className="founder-link">
+                  <a
+                    href="#/bryan-leavy"
+                    className="founder-link"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      window.location.hash = "/bryan-leavy";
+                      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                    }}
+                  >
                     Explore Bryan's Journey →
                   </a>
                 </div>
@@ -873,7 +883,15 @@ function App() {
                   />
                   <h3>Ronan Maher</h3>
                   <p className="founder-role">Co-Founder</p>
-                 <a href="#/ronan-maher" className="founder-link">
+                 <a
+                   href="#/ronan-maher"
+                   className="founder-link"
+                   onClick={(event) => {
+                     event.preventDefault();
+                     window.location.hash = "/ronan-maher";
+                     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+                   }}
+                 >
                     Explore Ronan's Journey →
                   </a>
                 </div>
