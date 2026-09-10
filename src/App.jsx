@@ -473,11 +473,21 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [formSent, setFormSent] = useState(false);
 
-  if (window.location.pathname === "/ronan-maher") {
+  const currentRoute = (() => {
+    const hashRoute = window.location.hash.replace(/^#\/?/, "").split("/")[0];
+
+    if (hashRoute) {
+      return hashRoute;
+    }
+
+    return window.location.pathname.replace(/^\//, "") || "";
+  })();
+
+  if (currentRoute === "ronan-maher") {
     return <RonanStory />;
   }
 
-  if (window.location.pathname === "/bryan-leavy") {
+  if (currentRoute === "bryan-leavy") {
     return <BryanStory />;
   }
 
@@ -837,7 +847,7 @@ function App() {
                   />
                   <h3>Bryan Leavy</h3>
                   <p className="founder-role">Co-Founder</p>
-                  <a href="/bryan-leavy" className="founder-link">
+                  <a href="/#/bryan-leavy" className="founder-link">
                     Explore Bryan's Journey →
                   </a>
                 </div>
@@ -852,7 +862,7 @@ function App() {
                   />
                   <h3>Ronan Maher</h3>
                   <p className="founder-role">Co-Founder</p>
-                 <a href="/ronan-maher" className="founder-link">
+                 <a href="/#/ronan-maher" className="founder-link">
                     Explore Ronan's Journey →
                   </a>
                 </div>
