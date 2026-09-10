@@ -472,16 +472,27 @@ function RonanStory() {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [formSent, setFormSent] = useState(false);
-
-  const currentRoute = (() => {
+  const [currentRoute, setCurrentRoute] = useState(() => {
     const hashRoute = window.location.hash.replace(/^#\/?/, "").split("/")[0];
-
-    if (hashRoute) {
-      return hashRoute;
-    }
-
+    if (hashRoute) return hashRoute;
     return window.location.pathname.replace(/^\//, "") || "";
-  })();
+  });
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      const hashRoute = window.location.hash.replace(/^#\/?/, "").split("/")[0];
+      const nextRoute = hashRoute || window.location.pathname.replace(/^\//, "") || "";
+      setCurrentRoute(nextRoute);
+    };
+
+    window.addEventListener("hashchange", handleRouteChange);
+    window.addEventListener("popstate", handleRouteChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleRouteChange);
+      window.removeEventListener("popstate", handleRouteChange);
+    };
+  }, []);
 
   if (currentRoute === "ronan-maher") {
     return <RonanStory />;
@@ -847,7 +858,7 @@ function App() {
                   />
                   <h3>Bryan Leavy</h3>
                   <p className="founder-role">Co-Founder</p>
-                  <a href="/#/bryan-leavy" className="founder-link">
+                  <a href="#/bryan-leavy" className="founder-link">
                     Explore Bryan's Journey →
                   </a>
                 </div>
@@ -862,7 +873,7 @@ function App() {
                   />
                   <h3>Ronan Maher</h3>
                   <p className="founder-role">Co-Founder</p>
-                 <a href="/#/ronan-maher" className="founder-link">
+                 <a href="#/ronan-maher" className="founder-link">
                     Explore Ronan's Journey →
                   </a>
                 </div>
